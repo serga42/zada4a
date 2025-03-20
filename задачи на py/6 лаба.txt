@@ -1,0 +1,426 @@
+1вариант
+1)Дан одномерный массив, состоящий из № целочисленных элементов. Ввести массив с клавиатуры.
+Найти максимальный элемент. Вывести массив на экран в обратном порядке.
+n = int(input("Введите количество элементов массива: "))
+
+arr = []
+for _ in range(n):
+    element = int(input(f"Введите элемент {_+1}: "))
+    arr.append(element)
+    max_element = max(arr)
+    reversed_arr = arr[::-1]
+
+print(f"Массив в обратном порядке: {reversed_arr}")
+print(f"Максимальный элемент: {max_element}")
+
+2)В массиве действительных чисел все нулевые элементы заменить на среднее арифметическое элементов массива.
+def replace_zeros_with_average(arr):
+    non_zero_elements = [num for num in arr if num != 0]
+    average = sum(non_zero_elements) / len(non_zero_elements)
+    new_arr = [average if num == 0 else num for num in arr]
+    return new_arr
+
+
+array = [1, 0, 3, 0, 5]
+new_array = replace_zeros_with_average(array)
+print(new_array)
+
+2вариант
+1)Дан одномерный массив, состоящий из № целочисленных элементов. Ввести массив с клавиатуры.
+Найти минимальный элемент. Вывести индекс минимального элемента на экран.
+n = int(input("Введите количество элементов массива: "))
+
+
+arr = []
+for i in range(n):
+    element = int(input(f"Введите элемент {i+1}: "))
+    arr.append(element)
+    min_value = min(arr)
+    min_index = arr.index(min_value)
+
+print(f"Минимальный элемент: {min_value}")
+print(f"Индекс минимального элемента: {min_index}")
+
+2)Дан массив целых чисел. Переписать все положительные элементы во второй массив, а отрицательные в третий.
+arr = list(map(int, input("Введите элементы массива через пробел: ").split()))
+
+positive_arr = []
+negative_arr = []
+
+for num in arr:
+    if num > 0:
+        positive_arr.append(num)
+    elif num < 0:
+        negative_arr.append(num)
+
+print("Положительные элементы:", positive_arr)
+print("Отрицательные элементы:", negative_arr)
+
+3вариант
+1)в массиве вычислить сумму элементов с нечетным и вывести
+import random
+
+
+D = [random.randint(1, 100) for _ in range(10)]
+
+
+sum_odd_index_elements = sum(D[i] for i in range(1, len(D), 2))
+
+
+print("Массив D:", D)
+print("Сумма элементов с нечетными индексами:", sum_odd_index_elements)
+
+2)
+array = [12, 18, 7, 25, 14, 30, 9, 20]
+
+
+for i in range(len(array)):
+    if array[i] < 15:
+        array[i] *= 2
+
+
+print("Преобразованный массив:", array)
+
+4вариант
+1)Дан массив целых чисел. Найти максимальный элемент массива и его порядковый номер.
+arr = [3, 6, 8, 2, 9, 4, 7]
+
+max_num = max(arr)
+index = arr.index(max_num)
+
+print(f"Максимальный элемент массива: {max_num}")
+print(f"Порядковый номер максимального элемента: {index}")
+
+2)Дан одномерный массив целого типа. Получить другой массив, состоящий только из нечетных чисел 
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+odd_numbers = []
+
+for num in numbers:
+    if num % 2 != 0:
+        odd_numbers.append(num)
+
+if len(odd_numbers) == 0:
+    print("В исходном массиве нет нечетных чисел")
+else:
+    odd_numbers.sort(reverse=True)
+print("Массив из нечетных чисел в порядке убывания элементов:", odd_numbers)
+
+5вариант
+1)Дан одномерный массив из 10 целых чисел. Вывести пары отрицательных чисел, стоящих по порядку.
+arr = [1, -4, 5, -2, -7, 3, 0, -1, -3, 6]
+
+for i in range(len(arr) - 1):
+    if arr[i] < 0 and arr[i + 1] < 0:
+        print(arr[i], arr[i + 1])
+
+
+2)Дан целочисленный массив размера 10. Создать новый массив, 
+удалив все одинаковые элементы, оставив их 1 раз.
+arr = [1, 2, 3, 4, 2, 3, 5, 6, 1, 7]
+new_arr = []
+
+for i in arr:
+    if i not in new_arr:
+        new_arr.append(i)
+
+print(new_arr)
+
+6вариант
+1)Дан одномерный массив из 10 целых чисел. Найти максимальный элемент и сравнить с ним остальные элементы.
+ Вывести количество меньших максимального элемента.
+arr = [10, 5, 20, 15, 8, 25, 12, 18, 30, 7]
+max_num = max(arr)
+count = sum(1 for num in arr if num < max_num)
+
+print(f"Максимальный элемент: {max_num}")
+print(f"Количество элементов меньше максимального: {count}")
+
+2)Одномерный массив из 10-и целых чисел заполнить с клавиатуры, определить сумму тех чисел, которые >5.
+arr = []
+for i in range(10):
+    num = int(input("enter nabers: "))
+    arr.append(num)
+
+sum_greater_than_5 = 0
+
+for i in arr:
+    if i > 5:
+        sum_greater_than_5 += i
+
+print(f"Сумма чисел, которые больше 5: {sum_greater_than_5}")
+
+7вариант
+1)Дан массив целых чисел. Найти сумму элементов с четными номерами и произведение элементов с нечетными номерами. Вывести сумму и произведение.
+arr = list(map(int, input("Введите элементы массива через пробел: ").split()))
+
+sum_even_index = 0
+prod_odd_index = 1
+
+for i in range(len(arr)):
+    if i % 2 == 0: # Если индекс четный
+        sum_even_index += arr[i]
+    else: # Если индекс нечетный
+        prod_odd_index *= arr[i]
+        
+print(f"Сумма элементов с четными индексами: {sum_even_index}")
+print(f"Произведение элементов с нечетными индексами: {prod_odd_index}")
+
+2)Переставить в одномерном массиве минимальный элемент и максимальный.
+def swap_min_max(arr):
+	min_idx = arr.index(min(arr))
+	max_idx = arr.index(max(arr))
+	arr[min_idx], arr[max_idx] = arr[max_idx], arr[min_idx]
+	return arr
+
+array = [3, 8, 9, 1, 6]
+result = swap_min_max(array)
+print(result)
+
+8вариант
+1)Напиши код на пайтан:Найдите сумму и произведение элементов списка. Результаты вывести на экран.
+my_list = [int(x) for x in input("Введите элементы списка через пробел: ").split()]
+
+total_sum = sum(my_list)
+
+product = 1
+for num in my_list:
+    product *= num
+
+print(f"Сумма элементов списка: {total_sum}")
+print(f"Произведение элементов списка: {product}")
+
+2)В массиве действительных чисел все нулевые элементы заменить на среднее арифметическое элементов массива
+def replace_zeros_with_average(arr):
+    non_zero_elements = [x for x in arr if x != 0]
+    average = sum(non_zero_elements) / len(non_zero_elements)
+    result_arr = [average if x == 0 else x for x in arr]
+    return result_arr
+
+input_array = [1, 0, 3, 0, 5]
+output_array = replace_zeros_with_average(input_array)
+print(output_array)
+
+9вариант
+1)Дан одномерный массив, состоящий из № вещественных
+элементов. Ввести массив с клавиатуры. Найти и вывести минимальный по модулю элемент. Вывести массив на экран в обратном порядке.
+n = int(input("Введите количество элементов массива: "))
+
+arr = []
+for i in range(n):
+    element = float(input(f"Введите элемент {i + 1}: "))
+    arr.append(element)
+    min_abs_element = min(arr, key=abs)
+    reversed_arr = arr[::-1]
+
+print(f"Минимальный по модулю элемент: {min_abs_element}")
+print(f"Массив в обратном порядке: {reversed_arr}")
+
+2)Даны массивы А и В одинакового размера 10. Вывести исходные массивы. Поменять места содержимое и вывести в начале 
+элементы преобразованного массива А, а затем элементы преобразованного массива В.
+A = list(map(int, input("Введите элементы массива A через пробел: ").split()))
+B = list(map(int, input("Введите элементы массива B через пробел: ").split()))
+
+if len(A) != len(B) or len(A) != 10:
+    print("Размеры массивов должны быть одинаковыми и равняться 10!")
+else:
+    print("Исходный массив A:", A)
+    print("Исходный массив B:", B)
+
+temp = A[:]
+A = B[:]
+B = temp[:]
+
+print("Преобразованный массив A:", A)
+print("Преобразованный массив B:", B)
+
+10вариант
+1)Определите, есть ли в списке повторяющиеся элементы, если да, то вывести на экран это число, а иначе сообщение об их отсутствии.
+lst = list(map(int, input("Введите элементы списка через пробел: ").split()))
+
+unique_set = set(lst)
+
+if len(unique_set) < len(lst):
+    duplicate = next(iter(set(lst) ^ unique_set))
+    print(f"Повторяющийся элемент: {duplicate}")
+else:
+    print("Повторяющихся элементов нет")
+
+2)Дан одномерный массив из 15 элементов. Элементам массива меньше 10 присвоить
+нулевые значения, а элементам больше 20 присвоить 1. Вывести на экран монитора первоначальный преобразованный массивы в строчку.
+
+arr = list(map(int, input("Введите 15 элементов массива через пробел: ").split()))
+	print("Первоначальный массив:", arr)
+transformed_arr = [0 if x < 10 else 1 if x > 20 else x for x in arr]
+print("Преобразованный массив:", transformed_arr)
+
+11вариант
+1)Найти наибольший элемент списка, который делиться на 2 без остатка и вывести его на экран.
+numbers = list(map(int, input("Введите элементы списка через пробел: ").split()))
+
+even_numbers = [num for num in numbers if num % 2 == 0]
+
+if even_numbers:
+    max_even = max(even_numbers)
+    print(max_even)
+else:
+    print("Нет подходящих элементов")
+
+2)Дан одномерный массив целого типа. Получить другой массив, состоящий только из четных исходного массива,
+меньше 10, или сообщить, что таких чисел нет. Полученный массив вывести в порядке возрастания элементов.
+
+lst = list(map(int, input("Введите элементы списка через пробел: ").split()))
+odd_elements = [x for x in lst if x % 2 != 0]
+if odd_elements:
+    smallest_odd = min(odd_elements)
+    print(smallest_odd)
+else:
+    print("Нет нечётных элементов")
+
+12вариант
+1)Найти наименьший нечетный элемент списка и вывести его на экран.
+lst = list(map(int, input("Введите элементы списка через пробел: ").split()))
+
+
+odd_elements = [x for x in lst if x % 2 != 0]
+
+
+if odd_elements:
+
+    smallest_odd = min(odd_elements)
+    print(f"Наименьший нечётный элемент: {smallest_odd}")
+else:
+    print("Нет нечётных элементов")
+
+2)Даны массивы А и В одинакового размера 10. Поменять местами их содержимое и вывести элементы преобразованного
+массива. А, а затем элементы преобразованного массива В.
+A = list(map(int, input("Введите элементы массива A через пробел: ").split()))
+B = list(map(int, input("Введите элементы массива B через пробел: ").split()))
+
+if len(A) != len(B) or len(A) != 10:
+    print("Размеры массивов должны быть одинаковыми и равняться 10!")
+else:
+
+    A, B = B, A
+
+print("Элементы преобразованного массива A:", A)
+print("Элементы преобразованного массива B:", B)
+
+13вариант
+1)дан одномерный массив целых числе. Проверить, есть ли в нем одинаковые элементы. Вывести элементы и их индексы
+def find_duplicates(arr):
+    element_indices = {}
+    
+    for index, element in enumerate(arr):
+        if element in element_indices:
+            element_indices[element].append(index)
+        else:
+            element_indices[element] = [index]
+    
+    duplicates_found = False
+    for element, indices in element_indices.items():
+        if len(indices) > 1:
+            print(f"Элемент {element} найден на индексах: {indices}")
+            duplicates_found = True
+    
+    if not duplicates_found:
+        print("Повторяющихся элементов не найдено.")
+
+array = [1, 2, 3, 4, 2, 5, 1, 6]
+find_duplicates(array)
+
+2) дан одномерный массив из 8 элементов. заменить все элементы массива меньше 15 их удвоенными значениями. вывести на экран монитора преобразованный массив
+def replace_and_double(arr):
+    for i in range(len(arr)):
+        if arr[i] < 15:
+            arr[i] *= 2
+    return arr
+
+array = [5, 10, 15, 20, 25, 3, 12, 18] 
+transformed_array = replace_and_double(array)
+
+print("Преобразованный массив:", transformed_array)
+
+14вариант
+1)найти максимальный элемент численого массива и поменять его местами с минимальным
+def swap_max_min(arr):
+    if len(arr) == 0:
+        print("Массив пуст.")
+        return arr
+    
+    max_index = arr.index(max(arr))
+    min_index = arr.index(min(arr))
+
+    arr[max_index], arr[min_index] = arr[min_index], arr[max_index]
+
+    return arr
+
+array = [5, 10, 3, 8, 15, 1, 12]
+print("Исходный массив:", array)
+transformed_array = swap_max_min(array)
+
+print("Массив после замены максимального и минимального элементов:", transformed_array)
+
+2) программа заполняет одноменрый массивиз 10 целых чисел числами, считанными с клавиатуры. определить 
+среднее арефмическое всех чисел маммива. заменить элементы массива больше среднего арефмитическогона 1
+def replace_above_average(arr):
+    average = sum(arr) / len(arr)
+    print(f"Среднее арифметическое: {average}")
+
+    for i in range(len(arr)):
+        if arr[i] > average:
+            arr[i] = 1
+
+    return arr
+
+array = []
+print("Введите 10 целых чисел:")
+for _ in range(10):
+    number = int(input())
+    array.append(number)
+
+transformed_array = replace_above_average(array)
+
+print("Преобразованный массив:", transformed_array)
+
+15вариант
+1)определить естьли в списке повторяющиеся элементы, если да, то вывести на экран эти элементы
+def find_duplicates(lst):
+    element_count = {}
+    duplicates = []
+
+    for element in lst:
+        if element in element_count:
+            element_count[element] += 1
+        else:
+            element_count[element] = 1
+
+    for element, count in element_count.items():
+        if count > 1:
+            duplicates.append(element)
+
+    return duplicates
+
+array = [int(x) for x in input("Введите элементы списка через пробел: ").split()]
+duplicates = find_duplicates(array)
+
+# Выводим повторяющиеся элементы
+if duplicates:
+    print("Повторяющиеся элементы:", duplicates)
+else:
+    print("Повторяющихся элементов нет.")
+
+2) дан одномерный массив целого типа. получить другой массив, состоящий только из нечетных
+чисел исходного массива или сообщать, что таких чисел нет. полученный массив вывести в порядке убывания элементов
+def get_odd_numbers(arr):
+    odd_numbers = [num for num in arr if num % 2 != 0]
+    return odd_numbers
+
+array = [int(x) for x in input("Введите элементы массива через пробел: ").split()]
+
+odd_numbers = get_odd_numbers(array)
+
+if odd_numbers:
+    odd_numbers.sort(reverse=True)
+    print("Массив нечетных чисел в порядке убывания:", odd_numbers)
+else:
+    print("Нечетных чисел в массиве нет.")

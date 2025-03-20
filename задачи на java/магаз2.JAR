@@ -1,0 +1,168 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Product {
+    String name;
+    double price;
+
+    Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return name + " - $" + price;
+    }
+}
+
+class Store {
+    private List<Product> catalog;
+
+    Store() {
+        catalog = new ArrayList<>();
+    }
+
+    void addProduct(Product product) {
+        catalog.add(product);
+    }
+
+    void updateProduct(int index, Product product) {
+        if (index >= 0 && index < catalog.size()) {
+            catalog.set(index, product);
+        } else {
+            System.out.println("Invalid product index.");
+        }
+    }
+
+    void displayCatalog() {
+        System.out.println("Catalog:");
+        for (int i = 0; i < catalog.size(); i++) {
+            System.out.println(i + ": " + catalog.get(i));
+        }
+    }
+
+    Product getProduct(int index) {
+        if (index >= 0 && index < catalog.size()) {
+            return catalog.get(index);
+        }
+        return null;
+    }
+}
+
+class Cart {
+    private List<Product> items;
+
+    Cart() {
+        items = new ArrayList<>();
+    }
+
+    void addItem(Product product) {
+        items.add(product);
+    }
+
+    void displayCart() {
+        System.out.println("Cart items:");
+        for (Product item : items) {
+            System.out.println(item);
+        }
+        System.out.printf("Total: $%.2f%n", calculateTotal());
+    }
+
+    double calculateTotal() {
+        double total = 0;
+        for (Product item : items) {
+            total += item.price;
+        }
+        return total;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Store store = new Store();
+        Cart cart = new Cart();
+
+        // Добавим несколько товаров в каталог
+        store.addProduct(new Product("Apple", 0.99));
+        store.addProduct(new Product("Banana", 0.59));
+        store.addProduct(new Product("Orange", 0.79));
+
+        while (true) {
+            System.out.println("Select role: 1 - Admin, 2 - Buyer, 0 - Exit");
+            char role = scanner.next().charAt(0);
+            scanner.nextLine(); // consume newline
+
+            if (role == '0') {
+                break;
+            }
+
+            if (role == '1') { // Admin
+                while (true) {
+                    try {
+                        System.out.println("Admin Menu: 1 - Add Product, 2 - Update Product, 3 - Display Catalog, 0 - Logout");
+                        char adminChoice = scanner.next().charAt(0);
+                        scanner.nextLine(); // consume newline
+
+                        if (adminChoice == '0') {
+                            break;
+                        } else if (adminChoice == '1') {
+                            System.out.println("Enter product name to add:");
+                            String name = scanner.nextLine();
+                            System.out.println("Enter product price:");
+                            double price = scanner.nextDouble();
+                            store.addProduct(new Product(name, price));
+                            System.out.println("Product added: " + name + " - $" + price);
+                        } else if (adminChoice == '2') {
+                            store.displayCatalog();
+                            System.out.println("Enter product index to update:");
+                            int index = scanner.nextInt();
+                            scanner.nextLine(); // consume newline
+                            System.out.println("Enter new product name:");
+                            String name = scanner.nextLine();
+                            System.out.println("Enter new product price:");
+                            double price = scanner.nextDouble();
+                            store.updateProduct(index, new Product(name, price));
+                        } else if (adminChoice == '3') {
+                            store.displayCatalog();
+                        }
+                    } catch (java.util.InputMismatchException e) {
+                        System.out.println("Пожалуйста, вводите корректные данные.");
+                        scanner.nextLine(); // очистка ввода
+                    }
+                }
+            } else if (role == '2') { // Buyer
+                while (true) {
+                    System.out.println("Buyer Menu: 1 - View Catalog, 2 - Add to Cart, 3 - View Cart, 0 - Logout");
+                    char buyerChoice = scanner.next().charAt(0);
+                    scanner.nextLine(); // consume newline
+
+                    if (buyerChoice == '0') {
+                        break;
+                    } else if (buyerChoice == '1') {
+                        store.displayCatalog();
+                    } else if (buyerChoice == '2') {
+                        store.displayCatalog();
+                        System.out.println("Enter product index to add to cart:");
+                        int index = scanner.nextInt();
+                        Product product = store.getProduct(index);
+                        if (product != null) {
+                            cart.addItem(product);
+                            System.out.println("Added to cart: " + product);
+                        } else {
+                            System.out.println("Invalid product index.");
+                        }
+                    } else if (buyerChoice == '3') {
+                        cart.displayCart();
+                    }
+                }
+            } else {
+                System.out.println("Вводить можно только 1, 2, 0");
+            }
+        }
+
+        scanner.close();
+    }
+}

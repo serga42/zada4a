@@ -1,0 +1,179 @@
+1)НАЙТИ КОЛИЧЕСТВО СЛОВ НАЧИНАЮЩИХСЯ НА А
+words = "азбука адольф ябланко"
+count = 0
+for word in words.split(" "):
+    if word.strip()[0] == 'а':
+        count +=1
+print(count)
+
+2)ЗАМЕНЯЕТ : знак % 	
+from re import subn
+ 
+s = ';;;:::'
+res = subn(':', '!', s)
+print(f'Result: {res[0]}\nmatches: {res[1]}')
+
+3)удоляет точки и считает кличество
+string = "Это строка со многими точками. Удалим точки." 
+count = string.count('.') 
+string = string.replace('.', '') 
+print(f"Удалено {count} точек. Новая строка: {string}")
+
+4)заменяет а на о
+string = "Это строка со многими точками. Удалим точки." 
+count = string.count('а') 
+string = string.replace('а', 'о') 
+print(f"Удалено {count} точек. Новая строка: {string}")
+
+5)В строке заменить все заглавные буквы строчными.
+def replace_upper_with_lower(input_string):
+    return input_string.lower()
+
+input_string = "Это ПрИмеР СтРоки С ЗаГлаВными БуКваМи"
+result = replace_upper_with_lower(input_string)
+print(result)
+
+6)В строке удалить все буквы «а» и подсчитать количество удаленных символов.
+def remove_and_count_a(input_string):
+    count_a = input_string.count('а')
+    modified_string = input_string.replace('а', '')
+    return modified_string, count_a
+
+input_string = "Это пример строки с несколькими буквами а"
+modified_string, removed_count = remove_and_count_a(input_string)
+print(f"Изменённая строка: {modified_string}")
+print(f"Количество удалённых символов 'а': {removed_count}")
+
+7)какито выебоны с масивами не навижу их,меняет быквы п на *
+def replace_p_with_stars(s):
+    n = len(s)
+    result = []
+    
+    for i in range(n):
+        if s[i] == 'П':
+            result.append('*')
+        else:
+            result.append(s[i])
+    
+    return ''.join(result)
+
+input_string = "Привет, Питон! Параллельная обработка."
+output_string = replace_p_with_stars(input_string)
+print(output_string)
+
+8)Дана строка, заканчивающаяся точкой. Подсчитать, сколько слов в строке
+def count_words(sentence):
+    if sentence.endswith('.'):
+        sentence = sentence[:-1]
+    
+    words = sentence.split()
+    
+    return len(words)
+input_string = "Это пример строки, которая заканчивается точкой."
+word_count = count_words(input_string)
+print(f"Количество слов в строке: {word_count}")
+
+9)Определить, сколько раз в тексте встречается заданное слово.
+def count_word_occurrences(text, word):
+    text = text.lower()
+    word = word.lower()
+    
+    words = text.split()
+    
+    count = words.count(word)
+    
+    return count
+
+input_text = "Это пример текста, в котором слово 'пример' встречается несколько раз. Пример."
+search_word = "пример"
+occurrences = count_word_occurrences(input_text, search_word)
+print(f"Слово '{search_word}' встречается {occurrences} раз(а) в тексте.")
+
+10)язгнаю что надо только англ но просто скажу не работает с русским языком из за кревого компилятора сайта
+,Дана строка-предложение на английском языке.Преобразовать строку так, чтобы каждое 
+слово начиналось с заглавной буквы
+def capitalize_words(sentence):
+    capitalized_sentence = sentence.title()
+    return capitalized_sentence
+
+input_sentence = "this is an example sentence."
+result = capitalize_words(input_sentence)
+print(result)
+
+11)Дана строка. Подсчитать самую длинную последовательность подряд идущих букв «н». 
+Преобразовать ее, заменив точками все восклицательные знаки.
+def longest_n_sequence_and_replace_exclamations(text):
+    max_n_length = 0
+    current_n_length = 0
+    
+    for char in text:
+        if char == 'н':
+            current_n_length += 1
+            if current_n_length > max_n_length:
+                max_n_length = current_n_length
+        else:
+            current_n_length = 0
+    
+    modified_text = text.replace('!', '.')
+    
+    return max_n_length, modified_text
+
+input_text = "Это пример текста!! Здесь много нннннн, а также нн и ннн!"
+longest_n, modified_text = longest_n_sequence_and_replace_exclamations(input_text)
+
+print(f"Самая длинная последовательность 'н': {longest_n}")
+print(f"Измененный текст: {modified_text}")
+
+12)выводит слова которые заканчиваються на я
+def words_ending_with_ya(sentence):
+    words = sentence.split()
+
+    words_ending_with_ya = [word for word in words if word.endswith('я')]
+    
+    return words_ending_with_ya
+
+input_sentence = "Это пример текста с разными словами, которые заканчиваются на я."
+result = words_ending_with_ya(input_sentence)
+
+print("Слова, оканчивающиеся на 'я':", result)
+
+13)вывод текста внутри скобок
+def extract_text_within_brackets(text):
+    opening_bracket_index = text.find('(')
+    closing_bracket_index = text.find(')', opening_bracket_index)
+    
+    if opening_bracket_index != -1 and closing_bracket_index != -1:
+        return text[opening_bracket_index + 1:closing_bracket_index]
+    else:
+        return "Скобки не найдены."
+
+input_text = "Это пример строки с текстом внутри скобок (1xbet)."
+result = extract_text_within_brackets(input_text)
+
+print("Символы внутри скобок:", result)
+
+14)Дана строка. Вывести все слова, начинающиеся на букву «а» и слова оканчивающиеся на букву о
+def filter_words(sentence):
+    words = sentence.split()
+    
+    words_starting_with_a = [word for word in words if word.lower().startswith('а')]
+    words_ending_with_o = [word for word in words if word.lower().endswith('о')]
+    
+    return words_starting_with_a, words_ending_with_o
+
+input_sentence = "Александр всегда идет на работу, а кота зовут Мурка Амаксимжирный."
+words_starting_with_a, words_ending_with_o = filter_words(input_sentence)
+
+print("Слова, начинающиеся на 'а':", words_starting_with_a)
+print("Слова, оканчивающиеся на 'о':", words_ending_with_o)
+
+15)поститать сколько т
+def count_t_letters(text):
+    count = text.lower().count('т')
+    return count
+
+input_text = "тЭто тпттримтр текста,ттттт в ттттттвапвапвпваптттттквапваптвттттттатапттттаыаотттором тттт будем сттттттттчттттттттывпвапваыптттттттитать буквы 'т'."
+result = count_t_letters(input_text)
+
+print("Количество букв 'т':", result,"xexe))") 
+
