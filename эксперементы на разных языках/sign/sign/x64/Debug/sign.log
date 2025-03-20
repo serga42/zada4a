@@ -1,0 +1,10 @@
+﻿  sign.c
+C:\Users\User\source\repos\sign\sign\sign.c(50,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "double"
+C:\Users\User\source\repos\sign\sign\sign.c(41,15): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\sign\sign\sign.c(97,42): warning C4133: функция: несовместимые типы - из "char [4]" в "LPCWSTR"
+C:\Users\User\source\repos\sign\sign\sign.c(98,43): warning C4133: функция: несовместимые типы - из "char [5]" в "LPCWSTR"
+C:\Users\User\source\repos\sign\sign\sign.c(99,43): warning C4133: функция: несовместимые типы - из "char [5]" в "LPCWSTR"
+C:\Users\User\source\repos\sign\sign\sign.c(83,12): warning C4047: инициализация: "HANDLE" отличается по уровням косвенного обращения от "int"
+C:\Users\User\source\repos\sign\sign\sign.c(86,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\User\source\repos\sign\sign\sign.c(89,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\User\source\repos\sign\sign\sign.c(92,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.

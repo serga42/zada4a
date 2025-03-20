@@ -1,0 +1,50 @@
+﻿  Boook.cpp
+C:\Users\User\source\repos\Project1\Project1\Book.h(18,78): error C3222: "coverImagePath": нельзя объявить аргументы по умолчанию для функций-членов типа управляемый или универсальных функций
+  (компиляция исходного файла "Boook.cpp")
+  
+C:\Users\User\source\repos\Project1\Project1\Boook.cpp(15,15): error C2723: "HomeLibrary::Book::ToString": недопустимый спецификатор "override" для определения функции
+  MyForm.cpp
+C:\Users\User\source\repos\Project1\Project1\Book.h(18,78): error C3222: "coverImagePath": нельзя объявить аргументы по умолчанию для функций-членов типа управляемый или универсальных функций
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\User\source\repos\Project1\Project1\MyForm.h(48,13): error C2143: синтаксическая ошибка: отсутствие ";" перед "<"
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\User\source\repos\Project1\Project1\MyForm.h(48,9): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\User\source\repos\Project1\Project1\MyForm.h(48,27): error C2238: непредвиденные лексемы перед ";"
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(11,5): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(11,19): error C2061: синтаксическая ошибка: идентификатор "List"
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(260,5): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(270,9): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(286,30): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(288,13): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(289,13): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(290,13): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(292,38): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(323,30): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(352,30): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(354,34): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(362,9): error C2065: StreamWriter: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(362,23): error C2065: sw: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(362,34): error C2061: синтаксическая ошибка: идентификатор "StreamWriter"
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(363,34): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(365,13): error C2065: sw: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(365,27): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(365,47): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(365,68): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(365,88): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(365,107): error C2065: book: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(367,9): error C2065: sw: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(381,13): error C2065: StreamReader: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(381,27): error C2065: sr: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(381,38): error C2061: синтаксическая ошибка: идентификатор "StreamReader"
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(383,28): error C2065: sr: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(395,21): error C2065: books: необъявленный идентификатор
+C:\Users\User\source\repos\Project1\Project1\MyForm.cpp(398,13): error C2065: sr: необъявленный идентификатор
+  Proogram.cpp
+C:\Users\User\source\repos\Project1\Project1\Proogram.cpp(1,10): error C1083: Не удается открыть файл включение: pch.h: No such file or directory,
+  Создание кода...

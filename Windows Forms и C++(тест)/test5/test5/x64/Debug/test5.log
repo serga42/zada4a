@@ -1,0 +1,37 @@
+﻿  MyForm.cpp
+D:\ddd\test5\test5\MyForm.h(25,22): error C2664: "int sqlite3_open(const char *,sqlite3 **)": невозможно преобразовать аргумент 2 из "interior_ptr<sqlite3 *>" в "sqlite3 **"
+  (компиляция исходного файла "MyForm.cpp")
+      D:\ddd\test5\test5\MyForm.h(25,50):
+      Нельзя преобразовать тип управляемый в машинный тип
+      D:\ddd\test5\test5\SQlite\sqlite3.h(3871,16):
+       см. объявление "sqlite3_open"
+      D:\ddd\test5\test5\MyForm.h(25,22):
+      при попытке сопоставить список аргументов "(const char [12], interior_ptr<sqlite3 *>)"
+  
+D:\ddd\test5\test5\MyForm.h(41,18): error C2664: "int sqlite3_exec(sqlite3 *,const char *,int (__cdecl *)(void *,int,char **,char **),void *,char **)": невозможно преобразовать аргумент 5 из "interior_ptr<char *>" в "char **"
+  (компиляция исходного файла "MyForm.cpp")
+      D:\ddd\test5\test5\MyForm.h(41,57):
+      Нельзя преобразовать тип управляемый в машинный тип
+      D:\ddd\test5\test5\SQlite\sqlite3.h(427,16):
+       см. объявление "sqlite3_exec"
+      D:\ddd\test5\test5\MyForm.h(41,18):
+      при попытке сопоставить список аргументов "(sqlite3 *, const char *, int, int, interior_ptr<char *>)"
+  
+D:\ddd\test5\test5\MyForm.h(206,18): error C2664: "int sqlite3_prepare_v2(sqlite3 *,const char *,int,sqlite3_stmt **,const char **)": невозможно преобразовать аргумент 4 из "interior_ptr<sqlite3_stmt *>" в "sqlite3_stmt **"
+  (компиляция исходного файла "MyForm.cpp")
+      D:\ddd\test5\test5\MyForm.h(206,56):
+      Нельзя преобразовать тип управляемый в машинный тип
+      D:\ddd\test5\test5\SQlite\sqlite3.h(4429,16):
+       см. объявление "sqlite3_prepare_v2"
+      D:\ddd\test5\test5\MyForm.h(206,18):
+      при попытке сопоставить список аргументов "(sqlite3 *, const char *, int, interior_ptr<sqlite3_stmt *>, nullptr)"
+  
+D:\ddd\test5\test5\MyForm.h(257,18): error C2664: "int sqlite3_prepare_v2(sqlite3 *,const char *,int,sqlite3_stmt **,const char **)": невозможно преобразовать аргумент 4 из "interior_ptr<sqlite3_stmt *>" в "sqlite3_stmt **"
+  (компиляция исходного файла "MyForm.cpp")
+      D:\ddd\test5\test5\MyForm.h(257,56):
+      Нельзя преобразовать тип управляемый в машинный тип
+      D:\ddd\test5\test5\SQlite\sqlite3.h(4429,16):
+       см. объявление "sqlite3_prepare_v2"
+      D:\ddd\test5\test5\MyForm.h(257,18):
+      при попытке сопоставить список аргументов "(sqlite3 *, const char *, int, interior_ptr<sqlite3_stmt *>, nullptr)"
+  

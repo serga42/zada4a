@@ -1,0 +1,16 @@
+﻿  DatabaseHelper.cpp
+D:\ddd\test1\test1\DatabaseHelper.h(5,17): error C2871: System: пространство имен с таким именем не существует
+  (компиляция исходного файла "DatabaseHelper.cpp")
+  
+D:\ddd\test1\test1\DatabaseHelper.h(5,17): error C2065: System: необъявленный идентификатор
+  (компиляция исходного файла "DatabaseHelper.cpp")
+  
+D:\ddd\test1\test1\DatabaseHelper.h(7,1): error C2059: синтаксическая ошибка: public
+  (компиляция исходного файла "DatabaseHelper.cpp")
+  
+D:\ddd\test1\test1\DatabaseHelper.h(7,33): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+  (компиляция исходного файла "DatabaseHelper.cpp")
+  
+D:\ddd\test1\test1\DatabaseHelper.h(7,33): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+  (компиляция исходного файла "DatabaseHelper.cpp")
+  
